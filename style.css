@@ -1020,12 +1020,13 @@ body {
     }
     
     .hero-image {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
     
     .hero-image img {
-        height: 350px;
-        min-height: 350px;
-        max-height: 350px;
+        height: 200px;
+        min-height: 200px;
+        max-height: 200px;
     }
 }
