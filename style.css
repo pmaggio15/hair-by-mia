@@ -457,9 +457,12 @@ body {
     margin-bottom: 4rem;
 }
 
-.gallery-grid {
+.gallery-container {
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.gallery-track {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -534,9 +537,38 @@ body {
 
 /* Responsive for carousel */
 @media (max-width: 768px) {
+    .testimonials-section {
+        padding: 4rem 1rem;
+    }
+    
+    .testimonials-carousel {
+        margin-top: 2rem;
+        overflow: hidden;
+        position: relative;
+        padding: 0;
+    }
+    
+    .testimonials-track {
+        display: flex;
+        gap: 0;
+        transition: transform 0.8s ease-in-out;
+    }
+    
     .testimonial-card {
         min-width: 100%;
         flex: 0 0 100%;
+        padding: 1.5rem 1.2rem;
+        margin: 0;
+    }
+    
+    .testimonial-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .testimonial-author {
+        font-size: 0.8rem;
     }
 }
 
@@ -848,10 +880,66 @@ body {
 
 @media (max-width: 768px) {
     .nav-container {
-        padding: 0 1.5rem;
+        padding: 0 1rem;
+        gap: 0.5rem;
+    }
+    
+    .logo-image {
+        height: 50px;
+    }
+    
+    .nav-content {
+        flex: 1;
     }
     
     .nav-menu {
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+    }
+    
+    .nav-menu a {
+        font-size: 0.55rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .book-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.6rem;
+        position: static;
+        transform: none;
+    }
+    
+    .book-btn:hover {
+        transform: translateY(-2px);
+    }
+    
+    /* Reduce hero top spacing on mobile */
+    .hero {
+        margin-top: 80px;
+        padding-top: 2rem;
+    }
+    
+    /* Reorder about section - image after text */
+    .about-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .about-content {
+        order: 1;
+    }
+    
+    .about-image {
+        order: 2;
+        margin-top: 2rem;
+    }
+    
+    .about-image img {
+        height: 300px;
+    }
+    
+    /* Hide MEET ME button on mobile */
+    .secondary-btn {
         display: none;
     }
     
@@ -866,6 +954,25 @@ body {
     .gallery-grid,
     .testimonials-grid {
         grid-template-columns: 1fr;
+    }
+    
+    /* Gallery Carousel on Mobile */
+    .gallery-container {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .gallery-track {
+        display: flex;
+        gap: 1.5rem;
+        transition: transform 0.8s ease-in-out;
+        grid-template-columns: none;
+    }
+    
+    .gallery-item {
+        min-width: 100%;
+        flex: 0 0 100%;
+        height: 350px;
     }
     
     .hero,

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>| Hair by Mia |</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./favicon.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -15,7 +16,7 @@
         <div class="nav-container">
             <img src="./assets/miahiar.jpeg" alt="Hair By Mia Logo" class="logo-image">
             <div class="nav-content">
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="nav-menu">
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
                     <li><a href="#services">SERVICES</a></li>
@@ -24,7 +25,6 @@
                 </ul>
             </div>
             <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="book-btn">BOOK NOW</a>
-        </div>
         </div>
     </nav>
 
@@ -37,11 +37,10 @@
                 Experience transformative hair care in a serene, modern environment.<br>
                 Our expert stylists bring your vision to life with precision and care.
             </p>
-            <button class="cta-button">DISCOVER MORE</button>
+            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="cta-button">BOOK NOW</a>
         </div>
         <div class="hero-image">
             <img src="./assets/pic1.jpeg" alt="Hair By Mia Hero">
-            <img src="./assets/brush.jpeg" alt="Hair By Mia Hero">
         </div>
     </section>
 
@@ -105,35 +104,37 @@
         </div>
     </section>
 
-   <!-- Gallery Preview -->
+    <!-- Gallery Preview -->
     <section class="gallery-section" id="gallery">
         <div class="gallery-header">
             <p class="section-label">OUR WORK</p>
             <h2 class="section-title">Outcome Gallery</h2>
         </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="./assets/1.jpeg" alt="Hair styling work">
-            </div>
-            <div class="gallery-item">
-                <img src="./assets/2.jpeg" alt="Hair color work">
-            </div>
-            <div class="gallery-item">
-                <img src="./assets/3.jpeg" alt="Hair treatment work">
-            </div>
-            <div class="gallery-item">
-                <img src="./assets/4.jpeg" alt="Extension work">
-            </div>
-            <div class="gallery-item">
-                <img src="./assets/5.jpeg" alt="Special occasion styling">
-            </div>
-            <div class="gallery-item">
-                <img src="./assets/6.jpeg" alt="Hair transformation">
+        <div class="gallery-container">
+            <div class="gallery-track" id="gallery-track">
+                <div class="gallery-item">
+                    <img src="./assets/1.jpeg" alt="Hair styling work">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/2.jpeg" alt="Hair color work">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/3.jpeg" alt="Hair treatment work">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/4.jpeg" alt="Extension work">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/5.jpeg" alt="Special occasion styling">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/6.jpeg" alt="Hair transformation">
+                </div>
             </div>
         </div>
     </section>
 
-<!-- Testimonials -->
+    <!-- Testimonials -->
     <section class="testimonials-section">
         <div class="testimonials-container">
             <p class="section-label">CLIENT LOVE</p>
@@ -192,6 +193,7 @@
                 <p class="booking-description">Schedule your appointment directly through our booking system powered by Square.</p>
                 
                 <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="cta-button">BOOK HERE</a>
+                
                 <!-- Dynamic Calendar -->
                 <div class="calendar-container">
                     <div class="calendar-header">
@@ -217,42 +219,88 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-logo">| HAIR BY MIA |</div>
+            <div class="footer-logo">HAIR BY MIA | MT HAIR CO</div>
             <p class="footer-text">Crafting beauty with purpose & design since 2015</p>
             <div class="social-links">
-                <a href="https://www.instagram.com/hair_by_mia02" target="_blank" class="social-link">INSTAGRAM</a>
-                <a href="https://mia-cano-appointment-scheduling.square.site/" target="_blank" class="social-link">BOOK NOW</a>
+                <a href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" class="social-link">INSTAGRAM</a>
+                <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" class="social-link">FACEBOOK</a>
+                <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="social-link">SQUARE</a>
             </div>
             <p class="copyright">© 2025 MT HAIR CO LLC. All rights reserved.</p>
         </div>
     </footer>
-   <!-- Testimonials Carousel JavaScript -->
+
+    <!-- Testimonials Carousel JavaScript -->
     <script>
+        // Check if we're on mobile for testimonials
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+        
+        // Testimonials Carousel
         const testimonialsTrack = document.getElementById('testimonials-track');
         const testimonialCards = document.querySelectorAll('.testimonial-card');
-        let currentIndex = 0;
-        const slideInterval = 4000; // 4 seconds
-        const totalCards = testimonialCards.length;
+        let currentTestimonialIndex = 0;
+        const testimonialInterval = 4000; // 4 seconds
+        const totalTestimonialCards = testimonialCards.length;
         const visibleCards = 3;
         
         function slideTestimonials() {
-            currentIndex++;
-            
-            // Reset to beginning when we've cycled through all
-            if (currentIndex > totalCards - visibleCards) {
-                currentIndex = 0;
+            if (isMobile()) {
+                // On mobile, show 1 at a time with no gaps
+                currentTestimonialIndex++;
+                if (currentTestimonialIndex >= totalTestimonialCards) {
+                    currentTestimonialIndex = 0;
+                }
+                const cardWidth = testimonialCards[0].offsetWidth;
+                const translateX = -(currentTestimonialIndex * cardWidth);
+                testimonialsTrack.style.transform = `translateX(${translateX}px)`;
+            } else {
+                // On desktop, show 3 at a time
+                currentTestimonialIndex++;
+                if (currentTestimonialIndex > totalTestimonialCards - visibleCards) {
+                    currentTestimonialIndex = 0;
+                }
+                const cardWidth = testimonialCards[0].offsetWidth;
+                const gap = 48; // 3rem = 48px
+                const translateX = -(currentTestimonialIndex * (cardWidth + gap));
+                testimonialsTrack.style.transform = `translateX(${translateX}px)`;
             }
-            
-            // Calculate the card width + gap
-            const cardWidth = testimonialCards[0].offsetWidth;
-            const gap = 48; // 3rem = 48px
-            const translateX = -(currentIndex * (cardWidth + gap));
-            
-            testimonialsTrack.style.transform = `translateX(${translateX}px)`;
         }
         
-        // Auto-slide every 4 seconds
-        setInterval(slideTestimonials, slideInterval);
+        // Auto-slide testimonials every 4 seconds
+        setInterval(slideTestimonials, testimonialInterval);
+    </script>
+
+    <!-- Gallery Carousel JavaScript (Mobile Only) -->
+    <script>
+        const galleryTrack = document.getElementById('gallery-track');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        let currentGalleryIndex = 0;
+        const galleryInterval = 4000; // 4 seconds
+        const totalGalleryItems = galleryItems.length;
+        
+        function slideGallery() {
+            // Only run carousel on mobile
+            if (isMobile()) {
+                currentGalleryIndex++;
+                
+                // Reset to beginning when we've cycled through all
+                if (currentGalleryIndex >= totalGalleryItems) {
+                    currentGalleryIndex = 0;
+                }
+                
+                // Calculate the item width + gap
+                const itemWidth = galleryItems[0].offsetWidth;
+                const gap = 24; // 1.5rem = 24px
+                const translateX = -(currentGalleryIndex * (itemWidth + gap));
+                
+                galleryTrack.style.transform = `translateX(${translateX}px)`;
+            }
+        }
+        
+        // Auto-slide gallery every 4 seconds (mobile only)
+        setInterval(slideGallery, galleryInterval);
     </script>
 
     <!-- Calendar JavaScript -->
