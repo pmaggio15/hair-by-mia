@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     /* Sage Tones Color Palette */
     --sage-light-1: #E2E4D6;
