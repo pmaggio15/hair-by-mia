@@ -272,34 +272,39 @@
         setInterval(slideTestimonials, testimonialInterval);
     </script>
 
-    <!-- Gallery Carousel JavaScript (Mobile Only) -->
+   <!-- Gallery Carousel JavaScript (Same as Testimonials) -->
     <script>
         const galleryTrack = document.getElementById('gallery-track');
         const galleryItems = document.querySelectorAll('.gallery-item');
         let currentGalleryIndex = 0;
         const galleryInterval = 4000; // 4 seconds
         const totalGalleryItems = galleryItems.length;
+        const visibleGalleryItems = 3;
         
         function slideGallery() {
-            // Only run carousel on mobile
             if (isMobile()) {
+                // On mobile, show 1 at a time with no gaps
                 currentGalleryIndex++;
-                
-                // Reset to beginning when we've cycled through all
                 if (currentGalleryIndex >= totalGalleryItems) {
                     currentGalleryIndex = 0;
                 }
-                
-                // Calculate the item width + gap
                 const itemWidth = galleryItems[0].offsetWidth;
-                const gap = 24; // 1.5rem = 24px
+                const translateX = -(currentGalleryIndex * itemWidth);
+                galleryTrack.style.transform = `translateX(${translateX}px)`;
+            } else {
+                // On desktop, show 3 at a time, slide 1 at a time
+                currentGalleryIndex++;
+                if (currentGalleryIndex > totalGalleryItems - visibleGalleryItems) {
+                    currentGalleryIndex = 0;
+                }
+                const itemWidth = galleryItems[0].offsetWidth;
+                const gap = 48; // 3rem = 48px
                 const translateX = -(currentGalleryIndex * (itemWidth + gap));
-                
                 galleryTrack.style.transform = `translateX(${translateX}px)`;
             }
         }
         
-        // Auto-slide gallery every 4 seconds (mobile only)
+        // Auto-slide gallery every 4 seconds
         setInterval(slideGallery, galleryInterval);
     </script>
 
