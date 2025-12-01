@@ -68,7 +68,7 @@
     <!-- Services Section -->
     <section class="services-section" id="services">
         <div class="services-header">
-            <p class="section-label">WHAT WE OFFER</p>
+            <p class="section-label">WHAT I OFFER</p>
             <h2 class="section-title">Tailored Services</h2>
         </div>
         <div class="services-grid">
@@ -108,7 +108,7 @@
     <!-- Gallery Preview -->
     <section class="gallery-section" id="gallery">
         <div class="gallery-header">
-            <p class="section-label">OUR WORK</p>
+            <p class="section-label">MY WORK</p>
             <h2 class="section-title">Outcome Gallery</h2>
         </div>
         <div class="gallery-container">
@@ -139,7 +139,7 @@
     <section class="testimonials-section">
         <div class="testimonials-container">
             <p class="section-label">CLIENT LOVE</p>
-            <h2 class="section-title">What Our Clients Say</h2>
+            <h2 class="section-title">What My Clients Say</h2>
             <div class="testimonials-carousel">
                 <div class="testimonials-track" id="testimonials-track">
                     <div class="testimonial-card">
@@ -232,7 +232,7 @@
 
     <!-- Testimonials Carousel JavaScript -->
     <script>
-        // Check if we're on mobile for testimonials
+        
         function isMobile() {
             return window.innerWidth <= 768;
         }
@@ -241,13 +241,13 @@
         const testimonialsTrack = document.getElementById('testimonials-track');
         const testimonialCards = document.querySelectorAll('.testimonial-card');
         let currentTestimonialIndex = 0;
-        const testimonialInterval = 4000; // 4 seconds
+        const testimonialInterval = 4000; 
         const totalTestimonialCards = testimonialCards.length;
         const visibleCards = 3;
         
         function slideTestimonials() {
             if (isMobile()) {
-                // On mobile, show 1 at a time with no gaps
+                
                 currentTestimonialIndex++;
                 if (currentTestimonialIndex >= totalTestimonialCards) {
                     currentTestimonialIndex = 0;
@@ -256,13 +256,13 @@
                 const translateX = -(currentTestimonialIndex * cardWidth);
                 testimonialsTrack.style.transform = `translateX(${translateX}px)`;
             } else {
-                // On desktop, show 3 at a time
+               
                 currentTestimonialIndex++;
                 if (currentTestimonialIndex > totalTestimonialCards - visibleCards) {
                     currentTestimonialIndex = 0;
                 }
                 const cardWidth = testimonialCards[0].offsetWidth;
-                const gap = 48; // 3rem = 48px
+                const gap = 48;
                 const translateX = -(currentTestimonialIndex * (cardWidth + gap));
                 testimonialsTrack.style.transform = `translateX(${translateX}px)`;
             }
@@ -277,13 +277,12 @@
         const galleryTrack = document.getElementById('gallery-track');
         const galleryItems = document.querySelectorAll('.gallery-item');
         let currentGalleryIndex = 0;
-        const galleryInterval = 4000; // 4 seconds
+        const galleryInterval = 4000; 
         const totalGalleryItems = galleryItems.length;
         const visibleGalleryItems = 3;
         
         function slideGallery() {
             if (isMobile()) {
-                // On mobile, show 1 at a time with no gaps
                 currentGalleryIndex++;
                 if (currentGalleryIndex >= totalGalleryItems) {
                     currentGalleryIndex = 0;
@@ -292,7 +291,6 @@
                 const translateX = -(currentGalleryIndex * itemWidth);
                 galleryTrack.style.transform = `translateX(${translateX}px)`;
             } else {
-                // On desktop, show 3 at a time, slide 1 at a time
                 currentGalleryIndex++;
                 if (currentGalleryIndex > totalGalleryItems - visibleGalleryItems) {
                     currentGalleryIndex = 0;
