@@ -3,400 +3,396 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>| Hair by Mia |</title>
+    <meta name="description" content="Hair by Mia - Professional hair styling, coloring, and extension services in Kalispell, MT. Book your appointment today.">
+    <title>Hair by Mia | Professional Hair Salon in Kalispell, MT</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="accessibility-widget.css">
     <link rel="icon" type="image/png" href="./favicon.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Accessibility Widget Button -->
+    <button id="accessibility-widget-btn" 
+            class="accessibility-widget-button" 
+            aria-label="Open accessibility options"
+            title="Accessibility Options">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C10.9 2 10 2.9 10 4C10 5.1 10.9 6 12 6C13.1 6 14 5.1 14 4C14 2.9 13.1 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/>
+        </svg>
+    </button>
+
+    <!-- Accessibility Widget Panel -->
+    <div id="accessibility-widget-panel" 
+         class="accessibility-widget-panel" 
+         role="dialog" 
+         aria-labelledby="widget-title"
+         aria-modal="true"
+         hidden>
+        <div class="widget-header">
+            <h2 id="widget-title">Accessibility Options</h2>
+            <button class="widget-close" 
+                    aria-label="Close accessibility options"
+                    id="widget-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="widget-content">
+            <h3 class="widget-section-title">Content</h3>
+            
+            <div class="widget-options-grid">
+                <button class="widget-option" data-feature="bigger-text" aria-pressed="false">
+                    <svg class="widget-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3V9H3v3z"/>
+                    </svg>
+                    <span>Bigger Text</span>
+                </button>
+
+                <button class="widget-option" data-feature="bigger-cursor" aria-pressed="false">
+                    <svg class="widget-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M7.8 2.6l9.7 16.9l-3.3 1.9l-2.7-4.7l-4.2 4.2l-1.4-1.4l4.2-4.2l-4.7-2.7z"/>
+                    </svg>
+                    <span>Bigger Cursor</span>
+                </button>
+
+                <button class="widget-option" data-feature="tooltips" aria-pressed="false">
+                    <svg class="widget-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/>
+                    </svg>
+                    <span>Tooltips</span>
+                </button>
+
+                <button class="widget-option" data-feature="line-height" aria-pressed="false">
+                    <svg class="widget-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M10 19h4V5h-4v14zm-6-2h16v-2H4v2zm0-6h16V9H4v2z"/>
+                    </svg>
+                    <span>Line Height</span>
+                </button>
+
+                <button class="widget-option" data-feature="hide-images" aria-pressed="false">
+                    <svg class="widget-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M21 5v6.59l-3-3.01-4 4.01-4-4-4 4-3-3.01V5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2zm-3 6.42l3 3.01V19c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2v-6.58l3 2.99 4-4 4 4 4-3.99z"/>
+                    </svg>
+                    <span>Hide Images</span>
+                </button>
+
+                <button class="widget-option" data-feature="readable-fonts" aria-pressed="false">
+                    <svg class="widget-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M9.93 13.5h4.14L12 7.98zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4.05 16.5l-1.14-3H9.17l-1.12 3H5.96l5.11-13h1.86l5.11 13h-2.09z"/>
+                    </svg>
+                    <span>Readable Fonts</span>
+                </button>
+
+                <button class="widget-option" data-feature="dyslexic-font" aria-pressed="false">
+                    <svg class="widget-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M5 4v3h5.5v12h3V7H19V4H5z"/>
+                    </svg>
+                    <span>Dyslexic Font</span>
+                </button>
+
+                <button class="widget-option" data-feature="high-contrast" aria-pressed="false">
+                    <svg class="widget-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14v12c3.31 0 6-2.69 6-6s-2.69-6-6-6z"/>
+                    </svg>
+                    <span>High Contrast</span>
+                </button>
+
+                <button class="widget-option" data-feature="stop-animations" aria-pressed="false">
+                    <svg class="widget-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM8 16h8v-2H8z"/>
+                    </svg>
+                    <span>Stop Animations</span>
+                </button>
+            </div>
+
+            <button class="widget-reset" id="widget-reset-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+                </svg>
+                Reset Settings
+            </button>
+
+            <div class="widget-footer">
+                <a href="#" class="widget-statement-link">Accessibility Statement</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <img src="./assets/miahiar.jpeg" alt="Hair By Mia Logo" class="logo-image">
+            <a href="#home" aria-label="Hair by Mia home">
+                <img src="./assets/miahiar.jpeg" alt="Hair By Mia Logo" class="logo-image">
+            </a>
             <div class="nav-content">
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#gallery">GALLERY</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="#home" role="menuitem">HOME</a></li>
+                    <li role="none"><a href="#about" role="menuitem">ABOUT</a></li>
+                    <li role="none"><a href="#services" role="menuitem">SERVICES</a></li>
+                    <li role="none"><a href="#gallery" role="menuitem">GALLERY</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">CONTACT</a></li>
                 </ul>
             </div>
-            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="book-btn">BOOK NOW</a>
+            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" class="book-btn" aria-label="Book appointment on Square">BOOK NOW</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <p class="hero-subtitle">WELCOME TO HAIR BY MIA</p>
-            <h1 class="hero-title">Where Beauty<br>Meets Artistry</h1>
-            <p class="hero-description">
-                Experience transformative hair care in a serene, modern environment.<br>
-                Our expert stylists bring your vision to life with precision and care.
-            </p>
-            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="cta-button">BOOK NOW</a>
-        </div>
-        <div class="hero-image">
-            <img src="./assets/pic1.jpeg" alt="Hair By Mia Hero">
-            <img src="./assets/brush.jpeg" alt="Hair By Mia Hero">
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="./assets/Mia.jpeg" alt="About Hair By Mia">
-            </div>
-            <div class="about-content">
-                <p class="section-label">MY PHILOSOPHY</p>
-                <h2 class="section-title">Crafting Confidence<br>Through Hair</h2>
-                <p class="about-text">
-                    Every client receives a personalized consultation to ensure your style, lifestyle, and hair goals are fully understood. I exclusively use premium, sustainable products designed to protect the integrity and long-term health of your hair.
+    <main id="main-content">
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="hero-subtitle">WELCOME TO HAIR BY MIA</p>
+                <h1 class="hero-title" id="hero-title">Where Beauty<br>Meets Artistry</h1>
+                <p class="hero-description">
+                    Experience transformative hair care in a serene, modern environment.<br>
+                    Our expert stylists bring your vision to life with precision and care.
                 </p>
-                <p class="about-text">
-                    I am a dedicated mother of five with a passion for the outdoors and travel. When I'm in the salon, I specialize in blonding, seamless highlight blending, and professional extensions. I offer a full range of services for women, men, and children, including precision haircuts, dimensional color, fashion color, and waxing.
+                <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" class="cta-button" aria-label="Book your appointment now">BOOK NOW</a>
+            </div>
+            <div class="hero-image" role="img" aria-label="Hair styling showcase images">
+                <img src="./assets/pic1.jpeg" alt="Professional hair styling example showing elegant cut and color">
+                <img src="./assets/brush.jpeg" alt="Professional hair styling tools and equipment">
+            </div>
+        </section>
+
+        <section class="about-section" id="about" aria-labelledby="about-title">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="./assets/Mia.jpeg" alt="Mia, professional hair stylist and salon owner">
+                </div>
+                <div class="about-content">
+                    <p class="section-label">MY PHILOSOPHY</p>
+                    <h2 class="section-title" id="about-title">Crafting Confidence<br>Through Hair</h2>
+                    <p class="about-text">
+                        Every client receives a personalized consultation to ensure your style, lifestyle, and hair goals are fully understood. I exclusively use premium, sustainable products designed to protect the integrity and long-term health of your hair.
+                    </p>
+                    <p class="about-text">
+                        I am a dedicated mother of five with a passion for the outdoors and travel. When I'm in the salon, I specialize in blonding, seamless highlight blending, and professional extensions. I offer a full range of services for women, men, and children, including precision haircuts, dimensional color, fashion color, and waxing.
+                    </p>
+                    <button class="secondary-btn" aria-label="Learn more about Mia">MEET ME</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" id="services" aria-labelledby="services-title">
+            <div class="services-header">
+                <p class="section-label">WHAT I OFFER</p>
+                <h2 class="section-title" id="services-title">Tailored Services</h2>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" aria-label="Book hair cutting and styling services, starting from $30">
+                        <h3>Hair Cutting & Styling</h3>
+                        <p>Women's haircuts, men's haircuts, kids cuts, blowouts with thermal styling, and updos for any occasion.</p>
+                        <span class="service-price">From $30</span>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" aria-label="Book color services, pricing varies">
+                        <h3>Color Services</h3>
+                        <p>Full highlights, partial highlights, balayage, all over color, root touch ups, fashion color, color correction, and double process blending.</p>
+                        <span class="service-price">Price varies</span>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" aria-label="Book hair treatment services, pricing varies">
+                        <h3>Hair Treatments</h3>
+                        <p>Deep conditioning treatments, hair relaxer services, chemical relaxer, color gloss treatments, and toner applications for healthy, vibrant hair.</p>
+                        <span class="service-price">Price varies</span>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" aria-label="Book extension services, pricing varies">
+                        <h3>Extension Services</h3>
+                        <p>Extension consultations, extension maintenance including I-tip, tape in, and K-tip methods for seamless, natural-looking length and volume.</p>
+                        <span class="service-price">Price varies</span>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" aria-label="Book waxing services, starting from $10">
+                        <h3>Waxing Services</h3>
+                        <p>Full facial waxing including brow, lip, nose, chin, and cheek wax. Body waxing services including Brazilian, half leg, full leg, and brow lift & tint.</p>
+                        <span class="service-price">From $10</span>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" aria-label="Book special occasion styling, pricing varies">
+                        <h3>Special Occasions</h3>
+                        <p>Bridal styling, updo styles, and special event hair designed to make your moments unforgettable. Perfect for weddings and celebrations.</p>
+                        <span class="service-price">Price varies</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+            <div class="gallery-header">
+                <p class="section-label">MY WORK</p>
+                <h2 class="section-title" id="gallery-title">Outcome Gallery</h2>
+            </div>
+            <div class="gallery-container" role="region" aria-label="Image gallery carousel" aria-live="polite">
+                <div class="gallery-track" id="gallery-track">
+                    <div class="gallery-item">
+                        <img src="./assets/1.jpeg" alt="Before and after hair styling transformation">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/2.jpeg" alt="Professional hair color work example">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/3.jpeg" alt="Hair treatment results showing healthy shine">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/4.jpeg" alt="Extension work showing natural blend and volume">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/5.jpeg" alt="Special occasion updo styling">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/6.jpeg" alt="Complete hair transformation example">
+                    </div>
+                </div>
+                <div class="gallery-indicators" role="tablist" aria-label="Gallery slide indicators">
+                    <button role="tab" aria-label="Go to slide 1" aria-selected="true" data-slide="0"></button>
+                    <button role="tab" aria-label="Go to slide 2" aria-selected="false" data-slide="1"></button>
+                    <button role="tab" aria-label="Go to slide 3" aria-selected="false" data-slide="2"></button>
+                    <button role="tab" aria-label="Go to slide 4" aria-selected="false" data-slide="3"></button>
+                    <button role="tab" aria-label="Go to slide 5" aria-selected="false" data-slide="4"></button>
+                    <button role="tab" aria-label="Go to slide 6" aria-selected="false" data-slide="5"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section" aria-labelledby="testimonials-title">
+            <div class="testimonials-container">
+                <p class="section-label">CLIENT LOVE</p>
+                <h2 class="section-title" id="testimonials-title">What My Clients Say</h2>
+                <div class="testimonials-carousel" role="region" aria-label="Client testimonials carousel" aria-live="polite">
+                    <div class="testimonials-track" id="testimonials-track">
+                        <article class="testimonial-card">
+                            <blockquote>
+                                <p class="testimonial-text">"The attention to detail and the final result exceeded all my expectations."</p>
+                                <footer class="testimonial-author">— Sarah M.</footer>
+                            </blockquote>
+                        </article>
+                        <article class="testimonial-card">
+                            <blockquote>
+                                <p class="testimonial-text">"I've been seeing Mia for three years and wouldn't trust anyone else with my hair. She is so talented and professional."</p>
+                                <footer class="testimonial-author">— Jennifer K.</footer>
+                            </blockquote>
+                        </article>
+                        <article class="testimonial-card">
+                            <blockquote>
+                                <p class="testimonial-text">"From the moment you walk in, you feel pampered. The results speak for themselves - stunning every time."</p>
+                                <footer class="testimonial-author">— Emily R.</footer>
+                            </blockquote>
+                        </article>
+                        <article class="testimonial-card">
+                            <blockquote>
+                                <p class="testimonial-text">"Absolutely transformed my hair! The color and cut are exactly what I wanted. Mia is a true artist."</p>
+                                <footer class="testimonial-author">— Rachel T.</footer>
+                            </blockquote>
+                        </article>
+                        <article class="testimonial-card">
+                            <blockquote>
+                                <p class="testimonial-text">"Best salon experience in Kalispell! Professional, friendly, and my hair has never looked better."</p>
+                                <footer class="testimonial-author">— Amanda L.</footer>
+                            </blockquote>
+                        </article>
+                        <article class="testimonial-card">
+                            <blockquote>
+                                <p class="testimonial-text">"I get compliments on my hair every single day. Worth every penny and more. Highly recommend!"</p>
+                                <footer class="testimonial-author">— Jessica P.</footer>
+                            </blockquote>
+                        </article>
+                    </div>
+                    <div class="testimonials-indicators" role="tablist" aria-label="Testimonial slide indicators">
+                        <button role="tab" aria-label="Go to testimonial 1" aria-selected="true" data-slide="0"></button>
+                        <button role="tab" aria-label="Go to testimonial 2" aria-selected="false" data-slide="1"></button>
+                        <button role="tab" aria-label="Go to testimonial 3" aria-selected="false" data-slide="2"></button>
+                        <button role="tab" aria-label="Go to testimonial 4" aria-selected="false" data-slide="3"></button>
+                        <button role="tab" aria-label="Go to testimonial 5" aria-selected="false" data-slide="4"></button>
+                        <button role="tab" aria-label="Go to testimonial 6" aria-selected="false" data-slide="5"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2 class="section-title" id="contact-title">Come See Me</h2>
+                    <div class="info-block">
+                        <h3>LOCATION</h3>
+                        <address>
+                            1103 South Main St<br>
+                            Suite D<br>
+                            Kalispell, MT 59901
+                        </address>
+                    </div>
+                    <div class="info-block">
+                        <h3>HOURS</h3>
+                        <p>Monday - Friday: 9AM - 5PM<br>Saturday: Available upon request<br>Sunday: Available upon request</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>CONTACT</h3>
+                        <p>Phone: <a href="tel:4062106761" aria-label="Call 406-210-6761">406.210.6761</a><br>Email: <a href="mailto:02mcano@gmail.com">02mcano@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Book Your Appointment</h3>
+                    <p class="booking-description">Schedule your appointment directly through our booking system powered by Square.</p>
+                    
+                    <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" class="cta-button" aria-label="Book appointment on Square booking system">BOOK HERE</a>
+                    
+                    <div class="calendar-container" role="application" aria-label="Availability calendar">
+                        <div class="calendar-header">
+                            <button class="calendar-nav" id="prevMonth" aria-label="Previous month" type="button">
+                                <span aria-hidden="true">&lt;</span>
+                            </button>
+                            <h4 class="calendar-title" id="monthYear" aria-live="polite"></h4>
+                            <button class="calendar-nav" id="nextMonth" aria-label="Next month" type="button">
+                                <span aria-hidden="true">&gt;</span>
+                            </button>
+                        </div>
+                        <div class="calendar-weekdays" role="row">
+                            <div class="weekday" role="columnheader" aria-label="Sunday">Sun</div>
+                            <div class="weekday" role="columnheader" aria-label="Monday">Mon</div>
+                            <div class="weekday" role="columnheader" aria-label="Tuesday">Tue</div>
+                            <div class="weekday" role="columnheader" aria-label="Wednesday">Wed</div>
+                            <div class="weekday" role="columnheader" aria-label="Thursday">Thu</div>
+                            <div class="weekday" role="columnheader" aria-label="Friday">Fri</div>
+                            <div class="weekday" role="columnheader" aria-label="Saturday">Sat</div>
+                        </div>
+                        <div class="calendar-days" id="calendarDays" role="grid" aria-labelledby="monthYear"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-logo" aria-label="Hair by Mia">| HAIR BY MIA |</div>
+            <p class="footer-text">Crafting beauty with purpose & design</p>
+            <nav class="social-links" aria-label="Social media links">
+                <a href="https://www.instagram.com/hair_by_mia02" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit our Instagram page">INSTAGRAM</a>
+                <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Book appointment">BOOK NOW</a>
+            </nav>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Miacano. All rights reserved.</p>
+                <p class="developer-credit">
+                    Website developed by 
+                    <a href="https://paigemaggio.dev" target="_blank" rel="noopener noreferrer">Paige Maggio</a>
                 </p>
-                <button class="secondary-btn">MEET ME</button>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="services-header">
-            <p class="section-label">WHAT I OFFER</p>
-            <h2 class="section-title">Tailored Services</h2>
-        </div>
-        <div class="services-grid">
-            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="service-card">
-                <h3>Hair Cutting & Styling</h3>
-                <p>Women's haircuts, men's haircuts, kids cuts, blowouts with thermal styling, and updos for any occasion.</p>
-                <span class="service-price">From $30</span>
-            </a>
-            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="service-card">
-                <h3>Color Services</h3>
-                <p>Full highlights, partial highlights, balayage, all over color, root touch ups, fashion color, color correction, and double process blending.</p>
-                <span class="service-price">Price varies</span>
-            </a>
-            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="service-card">
-                <h3>Hair Treatments</h3>
-                <p>Deep conditioning treatments, hair relaxer services, chemical relaxer, color gloss treatments, and toner applications for healthy, vibrant hair.</p>
-                <span class="service-price">Price varies</span>
-            </a>
-            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="service-card">
-                <h3>Extension Services</h3>
-                <p>Extension consultations, extension maintenance including I-tip, tape in, and K-tip methods for seamless, natural-looking length and volume.</p>
-                <span class="service-price">Price varies</span>
-            </a>
-            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="service-card">
-                <h3>Waxing Services</h3>
-                <p>Full facial waxing including brow, lip, nose, chin, and cheek wax. Body waxing services including Brazilian, half leg, full leg, and brow lift & tint.</p>
-                <span class="service-price">From $10</span>
-            </a>
-            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="service-card">
-                <h3>Special Occasions</h3>
-                <p>Bridal styling, updo styles, and special event hair designed to make your moments unforgettable. Perfect for weddings and celebrations.</p>
-                <span class="service-price">Price varies</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Gallery Preview -->
-    <section class="gallery-section" id="gallery">
-        <div class="gallery-header">
-            <p class="section-label">MY WORK</p>
-            <h2 class="section-title">Outcome Gallery</h2>
-        </div>
-        <div class="gallery-container">
-            <div class="gallery-track" id="gallery-track">
-                <div class="gallery-item">
-                    <img src="./assets/1.jpeg" alt="Hair styling work">
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/2.jpeg" alt="Hair color work">
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/3.jpeg" alt="Hair treatment work">
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/4.jpeg" alt="Extension work">
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/5.jpeg" alt="Special occasion styling">
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/6.jpeg" alt="Hair transformation">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials-section">
-        <div class="testimonials-container">
-            <p class="section-label">CLIENT LOVE</p>
-            <h2 class="section-title">What My Clients Say</h2>
-            <div class="testimonials-carousel">
-                <div class="testimonials-track" id="testimonials-track">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"The attention to detail and the final result exceeded all my expectations."</p>
-                        <p class="testimonial-author">— Sarah M.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"I've been seeing Mia for three years and wouldn't trust anyone else with my hair. She is so talented and professional."</p>
-                        <p class="testimonial-author">— Jennifer K.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"From the moment you walk in, you feel pampered. The results speak for themselves - stunning every time."</p>
-                        <p class="testimonial-author">— Emily R.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Absolutely transformed my hair! The color and cut are exactly what I wanted. Mia is a true artist."</p>
-                        <p class="testimonial-author">— Rachel T.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Best salon experience in Kalispell! Professional, friendly, and my hair has never looked better."</p>
-                        <p class="testimonial-author">— Amanda L.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"I get compliments on my hair every single day. Worth every penny and more. Highly recommend!"</p>
-                        <p class="testimonial-author">— Jessica P.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2 class="section-title">Come See Me</h2>
-                <div class="info-block">
-                    <h4>LOCATION</h4>
-                    <p>1103 South Main St<br>Suite D<br>Kalispell, MT 59901</p>
-                </div>
-                <div class="info-block">
-                    <h4>HOURS</h4>
-                    <p>Monday - Friday: 9AM - 5PM<br>Saturday: Available upon request<br>Sunday: Available upon request</p>
-                </div>
-                <div class="info-block">
-                    <h4>CONTACT</h4>
-                    <p>Phone: 406.210.6761<br>Email: 02mcano@gmail.com</p>
-                </div>
-            </div>
-            <div class="contact-form">
-                <h3>Book Your Appointment</h3>
-                <p class="booking-description">Schedule your appointment directly through our booking system powered by Square.</p>
-                
-                <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="cta-button">BOOK HERE</a>
-                
-                <!-- Dynamic Calendar -->
-                <div class="calendar-container">
-                    <div class="calendar-header">
-                        <button class="calendar-nav" id="prevMonth">&lt;</button>
-                        <h4 class="calendar-title" id="monthYear"></h4>
-                        <button class="calendar-nav" id="nextMonth">&gt;</button>
-                    </div>
-                    <div class="calendar-weekdays">
-                        <div class="weekday">Sun</div>
-                        <div class="weekday">Mon</div>
-                        <div class="weekday">Tue</div>
-                        <div class="weekday">Wed</div>
-                        <div class="weekday">Thu</div>
-                        <div class="weekday">Fri</div>
-                        <div class="weekday">Sat</div>
-                    </div>
-                    <div class="calendar-days" id="calendarDays"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-   <footer class="footer">
-    <div class="footer-content">
-        <div class="footer-logo">| HAIR BY MIA |</div>
-        <p class="footer-text">Crafting beauty with purpose & design</p>
-        <div class="social-links">
-            <a href="https://www.instagram.com/hair_by_mia02" target="_blank" class="social-link">INSTAGRAM</a>
-            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" class="social-link">BOOK NOW</a>
-        </div>
-        <div class="footer-bottom">
-            <p class="copyright">© 2025 Miacano. All rights reserved.</p>
-            <p class="developer-credit">
-                Website developed by 
-                <a href="https://paigemaggio.dev" target="_blank" rel="noopener noreferrer">Paige Maggio</a>
-            </p>
-        </div>
-    </div>
-</footer>
-
-
-    <!-- Testimonials Carousel JavaScript -->
-    <script>
-        
-        function isMobile() {
-            return window.innerWidth <= 768;
-        }
-        
-        // Testimonials Carousel
-        const testimonialsTrack = document.getElementById('testimonials-track');
-        const testimonialCards = document.querySelectorAll('.testimonial-card');
-        let currentTestimonialIndex = 0;
-        const testimonialInterval = 4000; 
-        const totalTestimonialCards = testimonialCards.length;
-        const visibleCards = 3;
-        
-        function slideTestimonials() {
-            if (isMobile()) {
-                
-                currentTestimonialIndex++;
-                if (currentTestimonialIndex >= totalTestimonialCards) {
-                    currentTestimonialIndex = 0;
-                }
-                const cardWidth = testimonialCards[0].offsetWidth;
-                const translateX = -(currentTestimonialIndex * cardWidth);
-                testimonialsTrack.style.transform = `translateX(${translateX}px)`;
-            } else {
-               
-                currentTestimonialIndex++;
-                if (currentTestimonialIndex > totalTestimonialCards - visibleCards) {
-                    currentTestimonialIndex = 0;
-                }
-                const cardWidth = testimonialCards[0].offsetWidth;
-                const gap = 48;
-                const translateX = -(currentTestimonialIndex * (cardWidth + gap));
-                testimonialsTrack.style.transform = `translateX(${translateX}px)`;
-            }
-        }
-        
-        // Auto-slide testimonials every 4 seconds
-        setInterval(slideTestimonials, testimonialInterval);
-    </script>
-
-   <!-- Gallery Carousel JavaScript (Same as Testimonials) -->
-    <script>
-        const galleryTrack = document.getElementById('gallery-track');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        let currentGalleryIndex = 0;
-        const galleryInterval = 4000; 
-        const totalGalleryItems = galleryItems.length;
-        const visibleGalleryItems = 3;
-        
-        function slideGallery() {
-            if (isMobile()) {
-                currentGalleryIndex++;
-                if (currentGalleryIndex >= totalGalleryItems) {
-                    currentGalleryIndex = 0;
-                }
-                const itemWidth = galleryItems[0].offsetWidth;
-                const translateX = -(currentGalleryIndex * itemWidth);
-                galleryTrack.style.transform = `translateX(${translateX}px)`;
-            } else {
-                currentGalleryIndex++;
-                if (currentGalleryIndex > totalGalleryItems - visibleGalleryItems) {
-                    currentGalleryIndex = 0;
-                }
-                const itemWidth = galleryItems[0].offsetWidth;
-                const gap = 48; // 3rem = 48px
-                const translateX = -(currentGalleryIndex * (itemWidth + gap));
-                galleryTrack.style.transform = `translateX(${translateX}px)`;
-            }
-        }
-        
-        // Auto-slide gallery every 4 seconds
-        setInterval(slideGallery, galleryInterval);
-    </script>
-
-    <!-- Calendar JavaScript -->
-    <script>
-        let currentDate = new Date();
-        
-        function renderCalendar() {
-            const monthYear = document.getElementById('monthYear');
-            const calendarDays = document.getElementById('calendarDays');
-            
-            const year = currentDate.getFullYear();
-            const month = currentDate.getMonth();
-            
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                          'July', 'August', 'September', 'October', 'November', 'December'];
-            
-            monthYear.textContent = `${months[month]} ${year}`;
-            
-            const firstDay = new Date(year, month, 1).getDay();
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-            const today = new Date();
-            
-            calendarDays.innerHTML = '';
-            
-            // Add empty cells for days before month starts
-            for (let i = 0; i < firstDay; i++) {
-                const emptyDay = document.createElement('div');
-                emptyDay.className = 'calendar-day empty';
-                calendarDays.appendChild(emptyDay);
-            }
-            
-            // Add days of the month
-            for (let day = 1; day <= daysInMonth; day++) {
-                const dayElement = document.createElement('div');
-                dayElement.className = 'calendar-day';
-                dayElement.textContent = day;
-                
-                // Highlight today
-                if (year === today.getFullYear() && 
-                    month === today.getMonth() && 
-                    day === today.getDate()) {
-                    dayElement.classList.add('today');
-                }
-                
-                // Mark past days
-                const currentDayDate = new Date(year, month, day);
-                if (currentDayDate < new Date(today.getFullYear(), today.getMonth(), today.getDate())) {
-                    dayElement.classList.add('past');
-                }
-                
-                // Mark weekends
-                const dayOfWeek = new Date(year, month, day).getDay();
-                if (dayOfWeek === 0 || dayOfWeek === 6) {
-                    dayElement.classList.add('weekend');
-                }
-                
-                calendarDays.appendChild(dayElement);
-            }
-        }
-        
-        document.getElementById('prevMonth').addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        });
-        
-        document.getElementById('nextMonth').addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-        });
-        
-        // Initialize calendar on page load
-        renderCalendar();
-    </script>
-
-    <!-- Square Appointments Booking Script -->
-    <script src="https://square.site/appointments/buyer/widget/YOUR_SQUARE_BOOKING_ID/YOUR_LOCATION_ID.js"></script>
-    <script>
-        // Initialize Square Appointments Widget
-        window.SquareAppointmentsBooking && window.SquareAppointmentsBooking.init({
-            target: document.getElementById('square-appointments-booking'),
-            // Optional: Customize the booking widget appearance
-            style: {
-                primaryColor: '#4E6250',
-                backgroundColor: '#FFFFFF'
-            }
-        });
-    </script>
+    <script src="script.js"></script>
+    <script src="accessibility-widget.js"></script>
 </body>
 </html>

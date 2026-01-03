@@ -1,0 +1,353 @@
+/* Accessibility Widget Styles */
+
+.accessibility-widget-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #4E6250;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.accessibility-widget-button:hover,
+.accessibility-widget-button:focus {
+    background-color: #6D7C67;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.accessibility-widget-button svg {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+}
+
+.accessibility-widget-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.accessibility-widget-panel[aria-hidden="false"] {
+    transform: translateX(0);
+}
+
+.widget-header {
+    background-color: #2C3E2F;
+    color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.widget-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.widget-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.widget-close:hover,
+.widget-close:focus {
+    opacity: 0.7;
+}
+
+.widget-close svg {
+    width: 24px;
+    height: 24px;
+}
+
+.widget-content {
+    padding: 2rem 1.5rem;
+}
+
+.widget-section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2C3E2F;
+}
+
+.widget-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.widget-option {
+    background-color: #F5F3EE;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #2C3E2F;
+    text-align: center;
+}
+
+.widget-option:hover,
+.widget-option:focus {
+    background-color: #E2E4D6;
+    border-color: #4E6250;
+    transform: translateY(-2px);
+}
+
+.widget-option[aria-pressed="true"] {
+    background-color: #4E6250;
+    color: #fff;
+    border-color: #4E6250;
+}
+
+.widget-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.widget-reset {
+    width: 100%;
+    background-color: #2C3E2F;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.widget-reset:hover,
+.widget-reset:focus {
+    background-color: #4E6250;
+    transform: translateY(-2px);
+}
+
+.widget-reset svg {
+    width: 20px;
+    height: 20px;
+}
+
+.widget-footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid #E2E4D6;
+    text-align: center;
+}
+
+.widget-statement-link {
+    color: #4E6250;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.widget-statement-link:hover,
+.widget-statement-link:focus {
+    color: #6D7C67;
+    text-decoration: underline;
+}
+
+/* Accessibility Features Applied */
+
+body.bigger-text {
+    font-size: 150%;
+}
+
+body.bigger-text h1 {
+    font-size: 150%;
+}
+
+body.bigger-text h2 {
+    font-size: 150%;
+}
+
+body.bigger-text h3 {
+    font-size: 150%;
+}
+
+body.bigger-text p,
+body.bigger-text li,
+body.bigger-text a,
+body.bigger-text button,
+body.bigger-text span {
+    font-size: 150%;
+}
+
+body.bigger-cursor * {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M4 2 L4 24 L10 18 L14 28 L18 26 L14 16 L22 16 Z" fill="black"/></svg>') 0 0, auto !important;
+}
+
+body.line-height p,
+body.line-height li,
+body.line-height div {
+    line-height: 2 !important;
+}
+
+body.hide-images img {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+body.readable-fonts,
+body.readable-fonts * {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body.dyslexic-font,
+body.dyslexic-font * {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive !important;
+    letter-spacing: 0.05em !important;
+}
+
+body.high-contrast {
+    background-color: #000 !important;
+    color: #FFFF00 !important;
+}
+
+body.high-contrast * {
+    background-color: #000 !important;
+    color: #FFFF00 !important;
+    border-color: #FFFF00 !important;
+}
+
+body.high-contrast a {
+    color: #00FFFF !important;
+}
+
+body.high-contrast button,
+body.high-contrast .cta-button,
+body.high-contrast .book-btn {
+    background-color: #FFFF00 !important;
+    color: #000 !important;
+}
+
+body.stop-animations,
+body.stop-animations *,
+body.stop-animations *::before,
+body.stop-animations *::after {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* Tooltip functionality - handled by JavaScript */
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .accessibility-widget-button {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .accessibility-widget-button svg {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .accessibility-widget-panel {
+        width: 100%;
+    }
+    
+    .widget-options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Focus trap overlay */
+.widget-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9997;
+    display: none;
+}
+
+.widget-overlay.active {
+    display: block;
+}
+
+.accessibility-tooltip {
+    position: absolute;
+    background-color: #2C3E2F;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    white-space: nowrap;
+    z-index: 10001;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.accessibility-tooltip.visible {
+    opacity: 1;
+}
+
+.accessibility-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #2C3E2F;
+}
