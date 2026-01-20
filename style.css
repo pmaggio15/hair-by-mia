@@ -1107,3 +1107,141 @@ body {
         scroll-behavior: auto !important;
     }
 }
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: absolute;
+    right: 1rem;
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 3px;
+    background-color: var(--sage-dark-3);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+
+.hamburger-menu[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Desktop book button only */
+.mobile-book-btn {
+    display: none;
+}
+
+.desktop-book-btn {
+    display: inline-block;
+}
+
+/* Mobile Navigation Overlay */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    /* Hide desktop book button on mobile */
+    .desktop-book-btn {
+        display: none;
+    }
+    
+    /* Show mobile book button */
+    .mobile-book-btn {
+        display: block;
+        width: calc(100% - 4rem);
+        margin: 2rem 2rem 0 2rem;
+        text-align: center;
+        padding: 1rem 2rem;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        position: static;
+        transform: none;
+    }
+    
+    .mobile-book-btn:hover,
+    .mobile-book-btn:focus {
+        transform: translateY(-2px);
+    }
+    
+    .nav-content {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--white);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        padding-top: 80px;
+        overflow-y: auto;
+    }
+    
+    .nav-content.active {
+        right: 0;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid var(--sage-light-1);
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 1.2rem 2rem;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu a:hover,
+    .nav-menu a:focus {
+        background-color: var(--sage-light-1);
+        padding-left: 2.5rem;
+    }
+}
+
+/* Mobile menu overlay backdrop */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+    display: block;
+    opacity: 1;
+}

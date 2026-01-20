@@ -129,7 +129,18 @@
             <a href="#home" aria-label="Hair by Mia home">
                 <img src="./assets/miahiar.jpeg" alt="Hair By Mia Logo" class="logo-image">
             </a>
-            <div class="nav-content">
+            
+            <button class="hamburger-menu" 
+                    id="hamburger-btn" 
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-nav">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <div class="nav-content" id="mobile-nav">
                 <ul class="nav-menu" role="menubar">
                     <li role="none"><a href="#home" role="menuitem">HOME</a></li>
                     <li role="none"><a href="#about" role="menuitem">ABOUT</a></li>
@@ -137,11 +148,21 @@
                     <li role="none"><a href="#gallery" role="menuitem">GALLERY</a></li>
                     <li role="none"><a href="#contact" role="menuitem">CONTACT</a></li>
                 </ul>
+                <a href="https://mia-cano-appointment-scheduling.square.site" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="book-btn mobile-book-btn" 
+                aria-label="Book appointment on Square">BOOK NOW</a>
             </div>
-            <a href="https://mia-cano-appointment-scheduling.square.site" target="_blank" rel="noopener noreferrer" class="book-btn" aria-label="Book appointment on Square">BOOK NOW</a>
+            
+            <a href="https://mia-cano-appointment-scheduling.square.site" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="book-btn desktop-book-btn" 
+            aria-label="Book appointment on Square">BOOK NOW</a>
         </div>
     </nav>
-
+    
     <main id="main-content">
         <section class="hero" id="home" aria-labelledby="hero-title">
             <div class="hero-content">

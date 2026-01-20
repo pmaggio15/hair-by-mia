@@ -390,6 +390,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Mobile Menu
+    new MobileMenu();
+    
     // Initialize Gallery Carousel
     const gallerySection = document.querySelector('.gallery-section');
     if (gallerySection && document.getElementById('gallery-track')) {
@@ -464,4 +467,95 @@ if (window.matchMedia('(prefers-contrast: high)').matches) {
 // Detect reduced motion preference
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.body.classList.add('reduced-motion');
+}
+
+// Mobile Hamburger Menu
+class MobileMenu {
+    constructor() {
+        this.hamburger = document.getElementById('hamburger-btn');
+        this.mobileNav = document.getElementById('mobile-nav');
+        this.menuLinks = document.querySelectorAll('.nav-menu a');
+        this.mobileBookBtn = document.querySelector('.mobile-book-btn');
+        this.overlay = null;
+        
+        if (!this.hamburger || !this.mobileNav) return;
+        
+        this.init();
+    }
+    
+    init() {
+        // Create overlay
+        this.overlay = document.createElement('div');
+        this.overlay.className = 'menu-overlay';
+        document.body.appendChild(this.overlay);
+        
+        // Hamburger click
+        this.hamburger.addEventListener('click', () => this.toggleMenu());
+        
+        // Overlay click to close
+        this.overlay.addEventListener('click', () => this.closeMenu());
+        
+        // Close menu when clicking nav links
+        this.menuLinks.forEach(link => {
+            link.addEventListener('click', () => this.closeMenu());
+        });
+        
+        // Close menu when clicking book button
+        if (this.mobileBookBtn) {
+            this.mobileBookBtn.addEventListener('click', () => this.closeMenu());
+        }
+        
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen()) {
+                this.closeMenu();
+            }
+        });
+        
+        // Handle resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && this.isOpen()) {
+                this.closeMenu();
+            }
+        });
+    }
+    
+    toggleMenu() {
+        if (this.isOpen()) {
+            this.closeMenu();
+        } else {
+            this.openMenu();
+        }
+    }
+    
+    openMenu() {
+        this.mobileNav.classList.add('active');
+        this.overlay.classList.add('active');
+        this.hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus first menu item
+        const firstLink = this.mobileNav.querySelector('.nav-menu a');
+        if (firstLink) {
+            setTimeout(() => firstLink.focus(), 100);
+        }
+        
+        announceToScreenReader('Navigation menu opened');
+    }
+    
+    closeMenu() {
+        this.mobileNav.classList.remove('active');
+        this.overlay.classList.remove('active');
+        this.hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        
+        // Return focus to hamburger
+        this.hamburger.focus();
+        
+        announceToScreenReader('Navigation menu closed');
+    }
+    
+    isOpen() {
+        return this.mobileNav.classList.contains('active');
+    }
 }
