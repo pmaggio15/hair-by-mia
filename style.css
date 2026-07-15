@@ -1245,3 +1245,86 @@ body {
     display: block;
     opacity: 1;
 }
+
+/* ===== "See More" button under homepage gallery ===== */
+.gallery-more {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.gallery-more a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* ===== Client Gallery Page (gallery.html) ===== */
+.gallery-page-header {
+    padding: 11rem 3rem 2rem;
+    text-align: center;
+    background-color: var(--cream);
+}
+
+.gallery-page-header .section-title {
+    margin-bottom: 1.5rem;
+}
+
+.gallery-page-intro {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--sage-medium-2);
+}
+
+.category-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 3rem;
+}
+
+.category-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.category-item {
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--sage-neutral-1) 0%, var(--sage-accent-1) 100%);
+}
+
+.category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover img,
+.category-item:focus-within img {
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .gallery-page-header {
+        padding: 8rem 1.5rem 1.5rem;
+    }
+
+    .category-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+}
